@@ -2,7 +2,7 @@ package config
 
 import (
 	"github.com/cloudfoundry-incubator/candiedyaml"
-	vcap "github.com/dinp/gorouter/common"
+	vcap "github.com/smartcaas/gorouter/common"
 
 	"io/ioutil"
 	"time"

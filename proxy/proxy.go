@@ -11,9 +11,9 @@ import (
 
 	"github.com/cloudfoundry/dropsonde/autowire"
 	steno "github.com/cloudfoundry/gosteno"
-	"github.com/dinp/gorouter/access_log"
-	router_http "github.com/dinp/gorouter/common/http"
-	"github.com/dinp/gorouter/route"
+	"github.com/smartcaas/gorouter/access_log"
+	router_http "github.com/smartcaas/gorouter/common/http"
+	"github.com/smartcaas/gorouter/route"
 )
 
 const retries = 3

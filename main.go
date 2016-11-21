@@ -3,12 +3,12 @@ package main
 import (
 	steno "github.com/cloudfoundry/gosteno"
 	"github.com/dinp/gorouter/access_log"
-	vcap "github.com/dinp/gorouter/common"
-	"github.com/dinp/gorouter/config"
-	"github.com/dinp/gorouter/proxy"
-	rregistry "github.com/dinp/gorouter/registry"
-	"github.com/dinp/gorouter/router"
-	rvarz "github.com/dinp/gorouter/varz"
+	vcap "github.com/smartcaas/gorouter/common"
+	"github.com/smartcaas/gorouter/config"
+	"github.com/smartcaas/gorouter/proxy"
+	rregistry "github.com/smartcaas/gorouter/registry"
+	"github.com/smartcaas/gorouter/router"
+	rvarz "github.com/smartcaas/gorouter/varz"
 
 	"flag"
 	"os"

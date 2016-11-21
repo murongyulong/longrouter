@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/dinp/gorouter/registry"
-	"github.com/dinp/gorouter/route"
-	"github.com/dinp/gorouter/stats"
+	"github.com/smartcaas/gorouter/registry"
+	"github.com/smartcaas/gorouter/route"
+	"github.com/smartcaas/gorouter/stats"
 	metrics "github.com/rcrowley/go-metrics"
 )
 

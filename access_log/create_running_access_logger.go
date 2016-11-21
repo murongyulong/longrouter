@@ -2,7 +2,7 @@ package access_log
 
 import (
 	steno "github.com/cloudfoundry/gosteno"
-	"github.com/dinp/gorouter/config"
+	"github.com/smartcaas/gorouter/config"
 	"strconv"
 
 	"os"

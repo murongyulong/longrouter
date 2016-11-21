@@ -10,7 +10,7 @@ import (
 	"time"
 
 	steno "github.com/cloudfoundry/gosteno"
-	. "github.com/dinp/gorouter/common/http"
+	. "github.com/smartcaas/gorouter/common/http"
 )
 
 var procStat *ProcessStatus

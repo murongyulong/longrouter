@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/dinp/gorouter",
+	"ImportPath": "github.com/smartcaas/gorouter",
 	"GoVersion": "go1.4",
 	"Deps": [
 		{

@@ -2,7 +2,7 @@ package main
 
 import (
 	steno "github.com/cloudfoundry/gosteno"
-	"github.com/dinp/gorouter/access_log"
+	"github.com/smartcaas/gorouter/access_log"
 	vcap "github.com/smartcaas/gorouter/common"
 	"github.com/smartcaas/gorouter/config"
 	"github.com/smartcaas/gorouter/proxy"

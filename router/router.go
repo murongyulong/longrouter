@@ -3,7 +3,7 @@ package router
 import (
 	"github.com/cloudfoundry/dropsonde/autowire"
 	steno "github.com/cloudfoundry/gosteno"
-	vcap "github.com/dinp/gorouter/common"
+	vcap "github.com/smartcaas/gorouter/common"
 	"github.com/smartcaas/gorouter/config"
 	"github.com/smartcaas/gorouter/proxy"
 	"github.com/smartcaas/gorouter/registry"

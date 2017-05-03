@@ -38,6 +38,7 @@ func NewRouter(cfg *config.Config, p proxy.Proxy, r *registry.RouteRegistry, v v
 	if cfg.Status.Port != 0 {
 		host = fmt.Sprintf("%s:%d", cfg.Ip, cfg.Status.Port)
 	}
+	host = "192.168.0.155:32789"
 
 	varz := &vcap.Varz{
 		UniqueVarz: v,

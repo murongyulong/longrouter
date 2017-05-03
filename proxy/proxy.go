@@ -86,16 +86,15 @@ func NewProxy(args ProxyArgs) Proxy {
 }
 
 func hostWithoutPort(req *http.Request) string {
-	//host := req.Host
+	host := req.Host
 
 	// Remove :<port>
-	//pos := strings.Index(host, ":")
-	
-	//if pos >= 0 {
-		//host = host[0:pos]
-	//}
+	pos := strings.Index(host, ":")
+	if pos >= 0 {
+		host = host[0:pos]
+	}
 
-	return "192.168.0.155:32789"
+	return host
 }
 
 func (p *proxy) Wait() {

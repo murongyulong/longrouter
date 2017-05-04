@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/murongyulong/gorouter/registry"
-	"github.com/murongyulong/gorouter/route"
-	"github.com/murongyulong/gorouter/stats"
+	"github.com/murongyulong/longrouter/registry"
+	"github.com/murongyulong/longrouter/route"
+	"github.com/murongyulong/longrouter/stats"
 	metrics "github.com/rcrowley/go-metrics"
 )
 

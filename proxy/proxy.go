@@ -11,9 +11,9 @@ import (
 
 	"github.com/cloudfoundry/dropsonde/autowire"
 	steno "github.com/cloudfoundry/gosteno"
-	"github.com/smartcaas/gorouter/access_log"
-	router_http "github.com/smartcaas/gorouter/common/http"
-	"github.com/smartcaas/gorouter/route"
+	"github.com/murongyulong/gorouter/access_log"
+	router_http "github.com/murongyulong/gorouter/common/http"
+	"github.com/murongyulong/gorouter/route"
 )
 
 const retries = 3
@@ -86,14 +86,14 @@ func NewProxy(args ProxyArgs) Proxy {
 }
 
 func hostWithoutPort(req *http.Request) string {
-	host := req.Host
-
+	//host := req.Host
+	host := "192.168.0.155:32789"
 	// Remove :<port>
 	pos := strings.Index(host, ":")
 	if pos >= 0 {
 		host = host[0:pos]
 	}
-
+	
 	return host
 }
 

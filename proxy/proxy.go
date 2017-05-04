@@ -11,9 +11,9 @@ import (
 
 	"github.com/cloudfoundry/dropsonde/autowire"
 	steno "github.com/cloudfoundry/gosteno"
-	"github.com/murongyulong/gorouter/access_log"
-	router_http "github.com/murongyulong/gorouter/common/http"
-	"github.com/murongyulong/gorouter/route"
+	"github.com/murongyulong/longrouter/access_log"
+	router_http "github.com/murongyulong/longrouter/common/http"
+	"github.com/murongyulong/longrouter/route"
 )
 
 const retries = 3

@@ -12,10 +12,10 @@ import (
 	"time"
 
 	steno "github.com/cloudfoundry/gosteno"
-	"github.com/murongyulong/gorouter/access_log"
-	"github.com/murongyulong/gorouter/common"
-	router_http "github.com/murongyulong/gorouter/common/http"
-	"github.com/murongyulong/gorouter/route"
+	"github.com/murongyulong/longrouter/access_log"
+	"github.com/murongyulong/longrouter/common"
+	router_http "github.com/murongyulong/longrouter/common/http"
+	"github.com/murongyulong/longrouter/route"
 )
 
 type RequestHandler struct {

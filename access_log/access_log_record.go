@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/murongyulong/gorouter/route"
+	"github.com/murongyulong/longrouter/route"
 )
 
 type AccessLogRecord struct {

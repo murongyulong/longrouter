@@ -3,11 +3,11 @@ package router
 import (
 	"github.com/cloudfoundry/dropsonde/autowire"
 	steno "github.com/cloudfoundry/gosteno"
-	vcap "github.com/smartcaas/gorouter/common"
-	"github.com/smartcaas/gorouter/config"
-	"github.com/smartcaas/gorouter/proxy"
-	"github.com/smartcaas/gorouter/registry"
-	"github.com/smartcaas/gorouter/varz"
+	vcap "github.com/murongyulong/gorouter/common"
+	"github.com/murongyulong/gorouter/config"
+	"github.com/murongyulong/gorouter/proxy"
+	"github.com/murongyulong/gorouter/registry"
+	"github.com/murongyulong/gorouter/varz"
 
 	"encoding/json"
 	"errors"

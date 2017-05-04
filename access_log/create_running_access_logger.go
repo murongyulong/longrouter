@@ -2,7 +2,7 @@ package access_log
 
 import (
 	steno "github.com/cloudfoundry/gosteno"
-	"github.com/murongyulong/gorouter/config"
+	"github.com/murongyulong/longrouter/config"
 	"strconv"
 
 	"os"

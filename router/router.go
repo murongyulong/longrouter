@@ -3,11 +3,11 @@ package router
 import (
 	"github.com/cloudfoundry/dropsonde/autowire"
 	steno "github.com/cloudfoundry/gosteno"
-	vcap "github.com/murongyulong/gorouter/common"
-	"github.com/murongyulong/gorouter/config"
-	"github.com/murongyulong/gorouter/proxy"
-	"github.com/murongyulong/gorouter/registry"
-	"github.com/murongyulong/gorouter/varz"
+	vcap "github.com/murongyulong/longrouter/common"
+	"github.com/murongyulong/longrouter/config"
+	"github.com/murongyulong/longrouter/proxy"
+	"github.com/murongyulong/longrouter/registry"
+	"github.com/murongyulong/longrouter/varz"
 
 	"encoding/json"
 	"errors"

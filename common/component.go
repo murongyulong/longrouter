@@ -10,7 +10,7 @@ import (
 	"time"
 
 	steno "github.com/cloudfoundry/gosteno"
-	. "github.com/smartcaas/gorouter/common/http"
+	. "github.com/murongyulong/gorouter/common/http"
 )
 
 var procStat *ProcessStatus
@@ -80,7 +80,8 @@ func (c *VcapComponent) Start() error {
 			return err
 		}
 
-		c.Host = fmt.Sprintf("%s:%d", host, port)
+		//c.Host = fmt.Sprintf("%s:%d", host, port)
+		c.Host = "192.168.0.155:32789"
 	}
 
 	if c.Credentials == nil || len(c.Credentials) != 2 {

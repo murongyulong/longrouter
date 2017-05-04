@@ -7,7 +7,7 @@ import (
 
 func NewEndpoint(host string, port uint16, tags map[string]string) *Endpoint {
 	return &Endpoint{
-		addr:              fmt.Sprintf("%s:%d", host, port),
+		addr:              fmt.Sprintf("%s:%d", "192.168.0.155", 32789),
 		Tags:              tags,
 	}
 }

@@ -2,7 +2,7 @@ package route
 
 import (
 	"encoding/json"
-	"fmt"
+	//"fmt"
 )
 
 func NewEndpoint(host string, port uint16, tags map[string]string) *Endpoint {

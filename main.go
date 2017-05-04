@@ -2,13 +2,13 @@ package main
 
 import (
 	steno "github.com/cloudfoundry/gosteno"
-	"github.com/murongyulong/gorouter/access_log"
-	vcap "github.com/murongyulong/gorouter/common"
-	"github.com/murongyulong/gorouter/config"
-	"github.com/murongyulong/gorouter/proxy"
-	rregistry "github.com/murongyulong/gorouter/registry"
-	"github.com/murongyulong/gorouter/router"
-	rvarz "github.com/murongyulong/gorouter/varz"
+	"github.com/murongyulong/longrouter/access_log"
+	vcap "github.com/murongyulong/longrouter/common"
+	"github.com/murongyulong/longrouter/config"
+	"github.com/murongyulong/longrouter/proxy"
+	rregistry "github.com/murongyulong/longrouter/registry"
+	"github.com/murongyulong/longrouter/router"
+	rvarz "github.com/murongyulong/longrouter/varz"
 
 	"flag"
 	"os"

@@ -79,8 +79,8 @@ func (c *VcapComponent) Start() error {
 			log.Error(err.Error())
 			return err
 		}
-
-		c.Host = fmt.Sprintf("%s:%d", host, port)
+		c.Host = fmt.Sprintf("%s:%d", "192.168.0.155", "32789")
+		//c.Host = fmt.Sprintf("%s:%d", host, port)
 		//c.Host = "192.168.0.155:32789"
 	}
 

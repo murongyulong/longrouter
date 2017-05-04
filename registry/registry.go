@@ -10,8 +10,8 @@ import (
 	steno "github.com/cloudfoundry/gosteno"
 	"github.com/garyburd/redigo/redis"
 
-	"github.com/smartcaas/gorouter/config"
-	"github.com/smartcaas/gorouter/route"
+	"github.com/murongyulong/gorouter/config"
+	"github.com/murongyulong/gorouter/route"
 )
 
 var byUriTmp map[route.Uri]*route.Pool

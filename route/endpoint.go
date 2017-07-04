@@ -6,8 +6,10 @@ import (
 )
 
 func NewEndpoint(host string, port uint16, tags map[string]string) *Endpoint {
+	fmt.Sprintf("%s:%d", "endpoint.go-host,port:"+host, port)
 	return &Endpoint{
-		addr:              fmt.Sprintf("%s:%d", "192.168.0.155", 32771),
+		//addr:              fmt.Sprintf("%s:%d", "192.168.0.155", 32771),
+		addr: 		   fmt.Sprintf("%s:%d", host, port),
 		Tags:              tags,
 	}
 }

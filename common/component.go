@@ -32,7 +32,7 @@ type VcapComponent struct {
 	StartTime Time     `json:"start"`
 	Uptime    Duration `json:"uptime"`
 
-	listener net.Listener
+	listener net.Listener 
 	statusCh chan error
 	quitCh   chan struct{}
 }
@@ -66,7 +66,7 @@ func (c *VcapComponent) Start() error {
 		return err
 	}
 	c.UUID = fmt.Sprintf("%d-%s", c.Index, uuid)
-
+	fmt.Sprintf("%s", "component.go-c.Host:"+c.Host)
 	if c.Host == "" {
 		host, err := LocalIP()
 		if err != nil {
@@ -79,11 +79,11 @@ func (c *VcapComponent) Start() error {
 			log.Error(err.Error())
 			return err
 		}
-		host = "192.168.0.155"
-		port = 32789
-		//c.Host = fmt.Sprintf("%s:%d", "192.168.0.155", "32789")
+		//host = "192.168.0.155"
+		//port = 32789
+		
 		c.Host = fmt.Sprintf("%s:%d", host, port)
-		//c.Host = "192.168.0.155:32789"
+		
 	}
 
 	if c.Credentials == nil || len(c.Credentials) != 2 {

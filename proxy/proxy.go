@@ -93,7 +93,7 @@ func hostWithoutPort(req *http.Request) string {
 	if pos >= 0 {
 		host = host[0:pos]
 	}
-	
+	fmt.Sprintf("%s", "proxy.go-host:"+host)
 	return host
 }
 

@@ -8,8 +8,8 @@ import (
 func NewEndpoint(host string, port uint16, tags map[string]string) *Endpoint {
 	fmt.Sprintf("%s:%d", "endpoint.go-host,port:"+host, port)
 	return &Endpoint{
-		addr:              fmt.Sprintf("%s:%d", "192.168.31.106", 32768),
-		//addr: 		   fmt.Sprintf("%s:%d", host, port),
+		//addr:              fmt.Sprintf("%s:%d", "192.168.31.106", 32768),
+		addr: 		   fmt.Sprintf("%s:%d", host, port),
 		Tags:              tags,
 	}
 }

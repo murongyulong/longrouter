@@ -93,6 +93,15 @@ func hostWithoutPort(req *http.Request) string {
 	if pos >= 0 {
 		host = host[0:pos]
 	}
+	/*输出日志*/
+	logfile,err:=os.OpenFile("./test.log",os.O_RDWR|os.O_CREATE,0666)
+    	if err!=nil{
+        	fmt.Printf("%s\r\n",err.Error())
+        	os.Exit(-1)
+   	 }
+    	defer logfile.Close()
+    	logger:=log.New(logfile,"\r\n",log.Ldate|log.Ltime|log.Llongfile)
+	/*输出日志*/
 	logger.Println("oh....")
 	return host
 }
@@ -104,6 +113,15 @@ func (p *proxy) Wait() {
 func (p *proxy) lookup(request *http.Request) *route.Pool {
 	uri := route.Uri(hostWithoutPort(request))
  	// Choose backend using host alone
+	/*输出日志*/
+	logfile,err:=os.OpenFile("./test.log",os.O_RDWR|os.O_CREATE,0666)
+    	if err!=nil{
+        	fmt.Printf("%s\r\n",err.Error())
+        	os.Exit(-1)
+   	 }
+    	defer logfile.Close()
+    	logger:=log.New(logfile,"\r\n",log.Ldate|log.Ltime|log.Llongfile)
+	/*输出日志*/
 	logger.Println("yeah....")
  	return p.registry.Lookup(uri)
 }

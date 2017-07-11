@@ -92,6 +92,7 @@ func hostWithoutPort(req *http.Request) string {
 	if pos >= 0 {
 		host = host[0:pos]
 	}
+	logger.Println("oh....")
 	return host
 }
 
@@ -101,9 +102,8 @@ func (p *proxy) Wait() {
 
 func (p *proxy) lookup(request *http.Request) *route.Pool {
 	uri := route.Uri(hostWithoutPort(request))
-	p.logger.Debug(uri)
  	// Choose backend using host alone
-	//p.logger.Debug("proxy.go-p.registry.Lookup(uri):"+p.registry.Lookup(uri))
+	logger.Println("yeah....")
  	return p.registry.Lookup(uri)
 }
 

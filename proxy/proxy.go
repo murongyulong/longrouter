@@ -8,7 +8,9 @@ import (
 	"strings"
 	"sync"
 	"time"
-	"log"
+	"fmt"
+    	"log"
+    	"os"
 
 	"github.com/cloudfoundry/dropsonde/autowire"
 	steno "github.com/cloudfoundry/gosteno"

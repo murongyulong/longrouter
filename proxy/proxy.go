@@ -101,9 +101,9 @@ func (p *proxy) Wait() {
 
 func (p *proxy) lookup(request *http.Request) *route.Pool {
 	uri := route.Uri(hostWithoutPort(request))
-	p.logger.Debug("proxy.go-uri:"+uri)
+	p.logger.Debug(uri)
  	// Choose backend using host alone
-	p.logger.Debug("proxy.go-p.registry.Lookup(uri):"+p.registry.Lookup(uri))
+	//p.logger.Debug("proxy.go-p.registry.Lookup(uri):"+p.registry.Lookup(uri))
  	return p.registry.Lookup(uri)
 }
 

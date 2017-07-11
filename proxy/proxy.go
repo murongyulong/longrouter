@@ -85,7 +85,8 @@ func NewProxy(args ProxyArgs) Proxy {
 	}
 }
 
-func (r *RouteRegistry) hostWithoutPort(req *http.Request) string {
+func hostWithoutPort(req *http.Request) string {
+	p := &proxy{}
 	host := req.Host
 	//host := "192.168.0.155:32789"
 	// Remove :<port>
@@ -93,7 +94,7 @@ func (r *RouteRegistry) hostWithoutPort(req *http.Request) string {
 	if pos >= 0 {
 		host = host[0:pos]
 	}
-	r.logger.Debug("proxy.go-host:"+host)
+	p.logger = steno.NewLogger("router.registry")
 	//fmt.Sprintf("%s", "proxy.go-host:"+host)
 	return host
 }

@@ -86,16 +86,12 @@ func NewProxy(args ProxyArgs) Proxy {
 }
 
 func hostWithoutPort(req *http.Request) string {
-	p := &proxy{}
 	host := req.Host
-	//host := "192.168.0.155:32789"
 	// Remove :<port>
-	pos := strings.Index(host, ":")
-	if pos >= 0 {
-		host = host[0:pos]
-	}
-	p.logger = steno.NewLogger("proxy.go-host:"+host)
-	//fmt.Sprintf("%s", "proxy.go-host:"+host)
+// 	pos := strings.Index(host, ":")
+// 	if pos >= 0 {
+// 		host = host[0:pos]
+// 	}
 	return host
 }
 

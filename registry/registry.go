@@ -169,8 +169,9 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 		r.logger.Error(err.Error())
 		return nil, false
 	}
-	r.logger.Debug(uriString)
+	
 	for _, uriString := range uriList {
+		r.logger.Debug(uriString)
 		uriType := route.Uri(strings.Split(uriString, "/")[1])
 		if uriType == "rs" {
 			uri := route.Uri(strings.Split(uriString, "/")[2])

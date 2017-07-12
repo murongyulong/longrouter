@@ -16,6 +16,7 @@ import (
 
 var byUriTmp map[route.Uri]*route.Pool
 var RedisConnPool *redis.Pool
+var temp
 
 func InitRedisConnPool(c *config.Config) {
 	RedisConnPool = &redis.Pool{
@@ -193,7 +194,13 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 				host := strings.Split(address, ":")[0]
 				p, _ := strconv.Atoi(strings.Split(address, ":")[1])
 				if p != 0 {
+					temp = p
 					port := uint16(p)
+
+					endpoint := route.NewEndpoint(host, port, nil)
+					pool.Put(endpoint)
+				}else{
+					port := uint16(temp)
 
 					endpoint := route.NewEndpoint(host, port, nil)
 					pool.Put(endpoint)

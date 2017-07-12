@@ -171,7 +171,6 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 	}
 	
 	for _, uriString := range uriList {
-		r.logger.Debug(uriString)
 		uriType := route.Uri(strings.Split(uriString, "/")[1])
 		if uriType == "rs" {
 			uri := route.Uri(strings.Split(uriString, "/")[2])
@@ -190,6 +189,7 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 			}
 
 			for _, address := range addresslist {
+				r.logger.Debug(address)
 				host := strings.Split(address, ":")[0]
 				p, _ := strconv.Atoi(strings.Split(address, ":")[1])
 				port := uint16(p)

@@ -192,7 +192,7 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 				r.logger.Debug(address)
 				host := strings.Split(address, ":")[0]
 				p, _ := strconv.Atoi(strings.Split(address, ":")[1])
-				if p != "0" {
+				if p != 0 {
 					port := uint16(p)
 
 					endpoint := route.NewEndpoint(host, port, nil)

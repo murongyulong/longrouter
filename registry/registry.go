@@ -16,7 +16,7 @@ import (
 
 var byUriTmp map[route.Uri]*route.Pool
 var RedisConnPool *redis.Pool
-var temp
+var temp = 0
 
 func InitRedisConnPool(c *config.Config) {
 	RedisConnPool = &redis.Pool{

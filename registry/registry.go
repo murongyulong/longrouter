@@ -190,9 +190,9 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 			}
 
 			for _, address := range addresslist {
-				r.logger.Debug(address)
 				host := strings.Split(address, ":")[0]
 				p, _ := strconv.Atoi(strings.Split(address, ":")[1])
+				r.logger.Debug(temp)
 				if p != 0 {
 					temp = p
 					port := uint16(p)

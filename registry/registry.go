@@ -83,6 +83,7 @@ func (r *RouteRegistry) Lookup(uri route.Uri) *route.Pool {
 	pool := r.byUri[uri]
 
 	r.RUnlock()
+
 	return pool
 }
 
@@ -189,24 +190,35 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 				return nil, false
 			}
 
+			for v, address := range addresslist {
+				r.logger.Debug("address:"+address)
+				host := strings.Split(address, ":")[0]
+				p, _ := strconv.Atoi(strings.Split(address, ":")[1])
+				if p != 0 {
+					continue
+				}else{
+					addresslist[v] = addresslist[v-1]
+				}
+			}
+
 			for _, address := range addresslist {
 				r.logger.Debug("address:"+address)
 				host := strings.Split(address, ":")[0]
 				p, _ := strconv.Atoi(strings.Split(address, ":")[1])
 				//r.logger.Debug(temp)
-				if p != 0 {
+				//if p != 0 {
 					//temp = p
 					port := uint16(p)
 
 					endpoint := route.NewEndpoint(host, port, nil)
 					pool.Put(endpoint)
-				}else{
+				//}else{
 					//port := uint16(temp)
 
 					//endpoint := route.NewEndpoint(host, port, nil)
 					//pool.Put(endpoint)
-					continue
-				}
+					//continue
+				//}
 			}
 		}
 	}

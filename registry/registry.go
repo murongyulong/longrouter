@@ -179,13 +179,13 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 			uri = uri.ToLower()
 
 			pool, found := byUriTmp[uri]
-			r.logger.Debug("byUriTmp[uri]:"+byUriTmp[uri])
 			if !found {
 				pool = route.NewPool(r.reloadUriInterval / 5)
 				byUriTmp[uri] = pool
 			}
 
 			addresslist, err := redis.Strings(rc.Do("LRANGE", uriString, "0", "-1"))
+			r.logger.Debug("addresslist:"+addresslist)
 			if err != nil {
 				r.logger.Error(err.Error())
 				return nil, false

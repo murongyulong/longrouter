@@ -185,7 +185,6 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 			}
 
 			addresslist, err := redis.Strings(rc.Do("LRANGE", uriString, "0", "-1"))
-			r.logger.Debug("addresslist[0]:"+addresslist[0])
 			if err != nil {
 				r.logger.Error(err.Error())
 				return nil, false

@@ -197,7 +197,7 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 				if p != 0 {
 					continue
 				}else{
-					if v = 0{
+					if v == 0{
 						continue
 					}else{
 						r.logger.Debug("addresslist[v]1:"+addresslist[v])

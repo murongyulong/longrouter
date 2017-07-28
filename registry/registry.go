@@ -83,7 +83,7 @@ func (r *RouteRegistry) Lookup(uri route.Uri) *route.Pool {
 	pool := r.byUri[uri]
 
 	r.RUnlock()
-
+	r.logger.Debug(pool)
 	return pool
 }
 

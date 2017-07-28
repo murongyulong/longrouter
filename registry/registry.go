@@ -190,20 +190,8 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 				return nil, false
 			}
 
-			for v, address := range addresslist {
-				r.logger.Debug("address:"+address)
-				p, _ := strconv.Atoi(strings.Split(address, ":")[1])
-				if p != 0 {
-					continue
-				}else{
-					if v == 0{
-						continue
-					}else{
-						r.logger.Debug("addresslist[v]1:"+addresslist[v])
-						addresslist[v] = addresslist[v-1]
-						r.logger.Debug("addresslist[v]2:"+addresslist[v])
-					}
-				}
+			for v, _ := range addresslist {
+				r.logger.Debug("addresslist[v]:"+addresslist[v])
 			}
 
 			for _, address := range addresslist {

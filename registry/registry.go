@@ -52,8 +52,6 @@ func NewRouteRegistry(c *config.Config) *RouteRegistry {
 
 	r.byUri = make(map[route.Uri]*route.Pool)
 
-	r.logger = steno.NewLogger(r.byUri)
-
 	r.reloadUriInterval = c.ReloadUriInterval
 
 	return r
@@ -70,7 +68,6 @@ func (r *RouteRegistry) Register() {
 		r.byUri = byUriTmp
 
 		r.timeOfLastUpdate = t
-		r.logger.Debug(r.byUri)
 		r.logger.Debug("registry finished Register")
 	} else {
 		r.logger.Error("generate UriMap failed.")
@@ -156,7 +153,6 @@ func (r *RouteRegistry) ReloadUri() {
 		r.byUri = byUriTmp
 
 		r.timeOfLastUpdate = time.Now()
-		r.logger.Debug(r.byUri)
 		r.logger.Debug("registry finished ReloadUri")
 	} else {
 		r.logger.Error("generate UriMap failed.")
@@ -176,7 +172,7 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 	}
 	
 	for _, uriString := range uriList {
-		r.logger.Debug(uriString)
+		r.logger.Debug("uriString:"+uriString)
 		uriType := route.Uri(strings.Split(uriString, "/")[1])
 		if uriType == "rs" {
 			uri := route.Uri(strings.Split(uriString, "/")[2])

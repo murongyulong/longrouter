@@ -179,6 +179,7 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 			uri = uri.ToLower()
 
 			pool, found := byUriTmp[uri]
+			r.logger.Debug("pool:"+pool)
 			if !found {
 				pool = route.NewPool(r.reloadUriInterval / 5)
 				byUriTmp[uri] = pool

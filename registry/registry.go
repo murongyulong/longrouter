@@ -203,19 +203,19 @@ func (r *RouteRegistry) GenerateUriMap() (map[route.Uri]*route.Pool, bool) {
 				host := strings.Split(address, ":")[0]
 				p, _ := strconv.Atoi(strings.Split(address, ":")[1])
 				//r.logger.Debug(temp)
-				//if p != 0 {
+				if p != 0 {
 					//temp = p
 					port := uint16(p)
 
 					endpoint := route.NewEndpoint(host, port, nil)
 					pool.Put(endpoint)
-				//}else{
-					//port := uint16(temp)
+				}else{
+// 					port := uint16(temp)
 
-					//endpoint := route.NewEndpoint(host, port, nil)
-					//pool.Put(endpoint)
-					//continue
-				//}
+// 					endpoint := route.NewEndpoint(host, port, nil)
+// 					pool.Put(endpoint)
+					continue
+				}
 			}
 		}
 	}

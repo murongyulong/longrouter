@@ -22,11 +22,12 @@ func InitRedisConnPool(c *config.Config) {
 		MaxIdle:     100,
 		IdleTimeout: 240 * time.Second,
 		Dial: func() (redis.Conn, error) {
-			conn, err := redis.Dial("tcp", c.RedisServer, redis.DialPassword(c.Password))
-			if err != nil {
-				return nil, err
-			}
-			return conn, err
+			//conn, err := redis.Dial("tcp", c.RedisServer, redis.DialPassword(c.Password))
+			//if err != nil {
+			//	return nil, err
+			//}
+			//return conn, err
+			return redis.Dial("tcp", Config().Redis.Dsn,redis.DialPassword(Config().Redis.Password))
 		},
 	}
 }

@@ -17,21 +17,30 @@ import (
 var byUriTmp map[route.Uri]*route.Pool
 var RedisConnPool *redis.Pool
 
-func InitRedisConnPool(c *config.Config) {
+func InitRedisConnPool() {
 	RedisConnPool = &redis.Pool{
 		MaxIdle:     100,
 		IdleTimeout: 240 * time.Second,
 		Dial: func() (redis.Conn, error) {
-			//conn, err := redis.Dial("tcp", c.RedisServer, "abcd1234")
-			//if err != nil {
-			//	return nil, err
-			//}
-			//return conn, err
-			//return redis.Dial("tcp", c.RedisServer, redis.DialPassword(c.Password))
-			return redis.Dial("tcp", c.RedisServer, "abcd1234")
+			rreturn redis.Dial("tcp", c.RedisServer, "abcd1234")
 		},
 	}
 }
+// func InitRedisConnPool(c *config.Config) {
+// 	RedisConnPool = &redis.Pool{
+// 		MaxIdle:     100,
+// 		IdleTimeout: 240 * time.Second,
+// 		Dial: func() (redis.Conn, error) {
+// 			//conn, err := redis.Dial("tcp", c.RedisServer, "abcd1234")
+// 			//if err != nil {
+// 			//	return nil, err
+// 			//}
+// 			//return conn, err
+// 			//return redis.Dial("tcp", c.RedisServer, redis.DialPassword(c.Password))
+// 			return redis.Dial("tcp", c.RedisServer, "abcd1234")
+// 		},
+// 	}
+// }
 
 type RouteRegistry struct {
 	sync.RWMutex

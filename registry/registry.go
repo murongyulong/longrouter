@@ -1,7 +1,7 @@
 package registry
 
 import (
-	"github.com/garyburd/redigo/redis"
+	
 	"encoding/json"
 	"strconv"
 	"strings"
@@ -9,7 +9,7 @@ import (
 	"time"
 
 	steno "github.com/cloudfoundry/gosteno"
-	
+	"github.com/garyburd/redigo/redis"
 
 	"github.com/murongyulong/longrouter/config"
 	"github.com/murongyulong/longrouter/route"

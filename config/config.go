@@ -40,7 +40,7 @@ type Config struct {
 	GoMaxProcs  int    `yaml:"go_max_procs,omitempty"`
 	TraceKey    string `yaml:"trace_key"`
 	RedisServer string `yaml:"redis_server"`
-	Password    sreing `yaml:"redis_password"`
+	Password    string `yaml:"redis_password"`
 	AccessLog   string `yaml:"access_log"`
 
 	ReloadUriIntervalInSeconds int `yaml:"reload_uri_interval"`

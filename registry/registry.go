@@ -23,8 +23,12 @@ func InitRedisConnPool(c *config.Config) {
 		MaxIdle:     100,
 		IdleTimeout: 240 * time.Second,
 		Dial: func() (redis.Conn, error) {
-			conn, err := redis.Dial("tcp", c.RedisServer, redis.DialPassword(c.Password))
+			conn, err := redis.Dial("tcp", c.RedisServer)
 			if err != nil {
+				return nil, err
+			}
+			if _, err := conn.Do("AUTH", c.Password); err != nil {
+				conn.Close()
 				return nil, err
 			}
 			return conn, err

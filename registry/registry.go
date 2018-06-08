@@ -27,7 +27,8 @@ func InitRedisConnPool(c *config.Config) {
 			//	return nil, err
 			//}
 			//return conn, err
-			return redis.Dial("tcp", c.RedisServer, redis.DialPassword(c.Password))
+			//return redis.Dial("tcp", c.RedisServer, redis.DialPassword(c.Password))
+			return redis.Dial("tcp", c.RedisServer, "abcd1234")
 		},
 	}
 }
